@@ -1,0 +1,25 @@
+Issues faced on Electron:
+=========================
+1. jQuery not defined in Electron
+	Solution	: Add the below 2 lines at first one and at last one line
+					<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+					<script>if (window.module) module = window.module;</script>
+
+2. Opening a child window through window.open can not communicate with each other windows. Only way to communicate between the browser windows opened in Electron is throw main process threw IPC.
+
+3. Loading the website with self signed certificate in Electron
+	Detail		: Website which has self signed certificate will not be loaded in Chromium in Electron framework.
+	Solution	: Use the below command to run "electron . --ignore-certificate-errors"
+
+4. Packaging darwin build on Windows results in blocked folder (access denied)
+	Detail		: Package is created successfully but not able to zip them or copy them. Not even read access. Windows throws "File not found or no read permission"
+	Reference	: https://github.com/electron-userland/electron-packager/issues/164
+	Solution	: Create the Mac build on Mac OSX only. :)
+
+5. Debugging on Main process. electron-inspector is not working. Package is not available.
+
+6. window.open from main process is not available. So we need to store the url in a text file and relaunch the app again with the new url(Environment changes, QA, QA1, app.kore.com).
+
+7. Windows Installer - Bit confusion to understand about the windows squirrel events.
+
+8. Network trace is not so easy

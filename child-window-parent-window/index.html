@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script>
+var win1;
+function openNewWindow(){
+	var url = "./child-window.html";
+	win1 = window.open(url, "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=150, left=300, width=900, height=750");
+}
+
+function receiveNotificationFromChild(){
+	alert("Received Notification From Child");
+}
+
+function notifyChiild(){
+	win1.receiveNotificationFromParent();
+}
+window.onbeforeunload = function(){
+	console.log("window.onbeforeunload");
+	win1.receiveNotificationFromParent("close");
+};
+window.ready = function(){
+	console.log("window.ready");
+}
+</script>
+<body>
+<h1>Parent Window</h1>
+<input type="button" name="btn1" id="btn1" onclick="JavaScript:openNewWindow();" value="Open New Window" />
+<input type="button" name="btn2" id="btn2" onclick="JavaScript:win1.receiveNotificationFromParent();" value="Notify Child" />
+</body>
+</html>

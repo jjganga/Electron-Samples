@@ -1,0 +1,7 @@
+{result:"SUCCESS", name:"Ganga", StatusCode:"200 OK"}
+{result:"SUCCESS", name:"Ganga", StatusCode:"200 OK"}
+{result:"SUCCESS", name:"Ganga", StatusCode:"200 OK"}
+{result:"SUCCESS", name:"Ganga", StatusCode:"200 OK"}
+Last Sync: 6/7/2017 @ 16:15:36 ::{result:"SUCCESS", name:"Ganga", StatusCode:"200 OK"}
+6/7/2017 @ 16:16:11 ::{result:"SUCCESS", name:"Ganga", StatusCode:"200 OK"}
+6/7/2017 @ 16:16:40 ::{result:"SUCCESS", name:"Ganga", StatusCode:"200 OK"}

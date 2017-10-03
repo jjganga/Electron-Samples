@@ -1,0 +1,21 @@
+{
+  "name": "cryptoSample",
+  "version": "0.0.1",
+  "description": "learnng jsnacl apis",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "debug": "^2.6.8",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "crypto",
+    "jsnacl"
+  ],
+  "author": "Priyank",
+  "license": "Free"
+}

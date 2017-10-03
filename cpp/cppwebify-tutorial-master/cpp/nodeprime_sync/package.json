@@ -1,0 +1,10 @@
+{
+  "name": "nodeprime_sync",
+  "version": "0.0.1",
+  "private": true,
+  "gypfile": true,
+  "install": "node-gyp configure build",
+  "dependencies": {
+    "nan": "*"
+  }
+}

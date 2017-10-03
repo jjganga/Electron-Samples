@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--html>
+  <head>
+   <meta charset="UTF-8">
+   <title>Hello World!</title>
+  </head>
+  <body>
+   <script>
+      const {ipcRenderer} = require('electron')
+
+      // Synchronous message emmiter and handler
+      console.log(ipcRenderer.sendSync('synchronous-message', 'sync ping')) 
+
+      // Async message handler
+      ipcRenderer.on('asynchronous-reply', (event, arg) => {
+         console.log(arg)
+      })
+
+      // Async message sender
+      ipcRenderer.send('asynchronous-message', 'async ping')
+   </script>
+  </body>
+</html-->
+
+<html>
+   <head>
+      <title>net Module</title>
+   </head>
+   <body>
+      <script>
+         var net = require('net');
+		 try{
+			 var client = net.connect({port: 8181}, function() {
+				console.log('Connection established!');  
+			 });
+			 client.on('data', function(data) {
+				document.write(data.toString());
+				client.end();
+			 });
+			 client.on('end', function() { 
+				console.log('Disconnected :(');
+			 });
+		 }catch(e){
+			console.log(e);
+		 }
+      </script>
+   </body>
+</html>
