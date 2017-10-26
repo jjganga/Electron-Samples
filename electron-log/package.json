@@ -1,0 +1,38 @@
+{
+  "name": "Electron-Log-Test",
+  "productName": "Electron-Log-Test",
+  "version": "1.0.0",
+  "description": "Electron-Log-Test",
+  "license": "Electron-Log-Test",
+  "main": "index.js",
+  "author": {
+    "name": "Gangatharan Raja",
+    "email": "gangatharan.raja@kore.ai",
+    "url": "www.ganga.com"
+  },
+  "scripts": {
+    "test": "xo",
+    "start": "electron . --ignore-certificate-errors",
+    "build": "electron-packager . --out=dist --asar --overwrite --all",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icon/logo32x32.icns --prune=true --out=mac_installer/release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=g-logo.ico --prune=true --out=release-builds --version-string.CompanyName='Electron-Log' --version-string.FileDescription=Electron-Log --version-string.ProductName='Electron-Log'",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+  },
+  "dependencies": {
+    "electron": "^1.6.6",
+    "fs": "0.0.1-security",
+	"electron-log": "^2.2.10"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron-packager": "^8.7.2",
+    "electron-prebuilt": "^1.4.13",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
